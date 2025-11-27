@@ -8,10 +8,16 @@ require('dotenv').config()
 app.use(express.json())
 app.use(cors())
 
+const loginRoute = require('./Routes/login')
+const taskRoute = require('./Routes/task')
+
 app.get('/',(req,res)=>{
     console.log("Test Route")
 })
 
+
+app.use('/',loginRoute)
+app.use('/task', taskRoute)
 
 
 app.listen(process.env.PORT,async ()=>{
