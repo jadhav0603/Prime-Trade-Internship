@@ -10,12 +10,13 @@ app.use(cors())
 
 const loginRoute = require('./Routes/login')
 const taskRoute = require('./Routes/task')
+const warmupRoute = require('./Routes/warmup')
 
-app.get('/',(req,res)=>{
-    console.log("Test Route")
-})
+// app.get('/',(req,res)=>{
+//     console.log("Test Route")
+// })
 
-
+app.use('/warmup', warmupRoute)
 app.use('/',loginRoute)
 app.use('/task', taskRoute)
 
