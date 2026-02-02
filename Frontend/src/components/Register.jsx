@@ -48,6 +48,13 @@ const Register = () => {
 
     const handlePassword = (e)=>{
         const value = e.target.value
+
+        if(value.length === 0){
+            setPassError("")
+            setConfirmPassword("")
+            return
+        }
+
         setConfirmPassword(e.target.value)
         if (value != password){
             setPassError("Passwords Not Matched")
